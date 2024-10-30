@@ -21,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 LoggingConfig.ConfigureLogging(builder.Configuration);
 builder.Host.UseSerilog();
 
-// Adicionando serviços ao contêiner
+// Adiciona serviços ao contêiner
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.PropertyNamingPolicy = null;
@@ -31,37 +31,37 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
-// Adicionando Redis - Utilizando RedisServiceExtensions
+// Adiciona Redis - Utilizando RedisServiceExtensions
 builder.Services.AddRedis(builder.Configuration);
 
-// Registrando IConnectionMultiplexer para Redis
+// Registra IConnectionMultiplexer para Redis
 builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 {
     var configuration = builder.Configuration.GetConnectionString("Redis");
     return ConnectionMultiplexer.Connect(configuration);
 });
 
-// Registrando serviços para LancamentosController e ConsolidadoDiarioController
+// Registra serviços para LancamentosController e ConsolidadoDiarioController
 builder.Services.AddScoped<ILancamentoService, LancamentoService>();
 builder.Services.AddScoped<IConsolidadoDiarioService, ConsolidadoDiarioService>();
 builder.Services.AddScoped<ILancamentoRepository, LancamentoRepository>();
 builder.Services.AddScoped<IConsolidadoDiarioRepository, ConsolidadoDiarioRepository>();
-builder.Services.AddScoped<IRedisCacheService, RedisCacheService>(); // Certifique-se de que está usando a interface
+builder.Services.AddScoped<IRedisCacheService, RedisCacheService>(); 
 
-// Registrando FluentValidation
+// Registra FluentValidation
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-// Registrando MediatR
+// Registra MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
-// Configurando MongoDB
+// Configura MongoDB
 builder.Services.AddSingleton<IMongoDatabase>(sp =>
 {
     var mongoClient = new MongoClient(builder.Configuration.GetConnectionString("MongoDb"));
     return mongoClient.GetDatabase(builder.Configuration["MongoSettings:DatabaseName"]);
 });
 
-// Adicionando Redis ConnectionMultiplexer
+// Adiciona Redis ConnectionMultiplexer
 builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 {
     var configuration = builder.Configuration.GetSection("Redis:ConnectionString").Value;
@@ -93,20 +93,20 @@ builder.Services.AddSingleton<IConnection>(sp =>
     }
 });
 
-// Registrando os UseCases
+// Registra os UseCases
 builder.Services.AddScoped<IAdicionarLancamentoUseCase, AdicionarLancamentoUseCase>();
 builder.Services.AddScoped<IConsolidarSaldoDiarioUseCase, ConsolidarSaldoDiarioUseCase>();
 
-// Configurando a representação do Guid
+// Configura a representação do Guid
 BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
 
 var app = builder.Build();
 
-// Adicionando Elastic APM se estiver configurado
+// Adiciona Elastic APM se estiver configurado
 // Se o Elastic APM for utilizado, adicione o pacote correto e use o middleware
 // app.UseElasticApm(builder.Configuration);
 
-// Configure o pipeline de requisição HTTP
+// Configura o pipeline de requisição HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
