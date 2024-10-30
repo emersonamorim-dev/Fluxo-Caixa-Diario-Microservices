@@ -36,11 +36,11 @@ Codificação em C# com Entity Framework com uso DotNet Core 8.0 para projeto **
 
 1. **Clonar o Repositório**:
    ```
-   git clone https://github.com/emersonamorim-dev/fluxo-caixa-diario-microservice.git
+   git clone https://github.com/emersonamorim-dev/Fluxo-Caixa-Diario-Microservice.git
    ```
    
    ```
-   cd fluxo-caixa-diario-microservice
+   cd Fluxo-Caixa-Diario-Microservice
    ```
 
 2. **Rode aplicação com Docker Desktop**
@@ -74,7 +74,8 @@ Codificação em C# com Entity Framework com uso DotNet Core 8.0 para projeto **
   "tipo": "Crédito",
   "data": "2024-10-28T18:25:43.511Z"
 }
-  ```
+  
+```
 
   - Retorno da Requisição:
   
@@ -87,7 +88,6 @@ Codificação em C# com Entity Framework com uso DotNet Core 8.0 para projeto **
 }
 
 ```
-```
 
 ##### Segue o endpoint para requisição Get para listar todos os Lançamentos no Postman
 
@@ -95,16 +95,87 @@ Codificação em C# com Entity Framework com uso DotNet Core 8.0 para projeto **
 
 - Retorno da Requisição
 
-
+```
+[
+    {
+        "Id": "e1a94f5a-618b-4c6b-8f18-9c81cb3c43b8",
+        "Valor": 3800.00,
+        "Tipo": "Débito",
+        "Data": "2024-10-28T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a94f5a-618b-4c6b-8f18-9c81cb3c53b8",
+        "Valor": 5800.00,
+        "Tipo": "Crédito",
+        "Data": "2024-10-28T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a94f5a-618b-4c6b-8f18-9c81cb3c51b8",
+        "Valor": 5800.00,
+        "Tipo": "Crédito",
+        "Data": "2024-10-28T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a94f5a-718b-4c6b-8f18-9c81cb3c51b8",
+        "Valor": 5800.00,
+        "Tipo": "Crédito",
+        "Data": "2024-10-28T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a93f5a-718b-4c6b-8f18-9c81cb3c51b8",
+        "Valor": 1800.00,
+        "Tipo": "Débito",
+        "Data": "2024-10-28T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a93f5a-818b-4c6b-8f18-9c81cb3c51b8",
+        "Valor": 7800.00,
+        "Tipo": "Crédito",
+        "Data": "2024-10-30T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a93f5a-918b-4c6b-8f18-9c81cb3c51b8",
+        "Valor": 6800.00,
+        "Tipo": "Crédito",
+        "Data": "2024-10-29T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a93f5a-918b-4c6b-8f19-9c81cb3c51b8",
+        "Valor": 1800.00,
+        "Tipo": "Débito",
+        "Data": "2024-10-29T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a93f5a-518b-4c6b-8f19-9c81cb3c51b8",
+        "Valor": 1800.00,
+        "Tipo": "Débito",
+        "Data": "2024-10-30T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a91f5a-518b-4c6b-8f19-9c81cb3c51b8",
+        "Valor": 1800.00,
+        "Tipo": "Débito",
+        "Data": "2024-10-30T18:25:43.511Z"
+    },
+    {
+        "Id": "e1a91f5a-518b-4c6b-8f29-9c81cb3c51b8",
+        "Valor": 3800.00,
+        "Tipo": "Crédito",
+        "Data": "2024-10-30T18:25:43.511Z"
+    }
+]
+```
 
 
 
 http://localhost:5000/api/consolidados/consolidado
 ```
+
 {
   "data": "2024-10-29"
 }
 ```
+
 
 Resposta
 Se a requisição for bem-sucedida e a data fornecida for válida, o endpoint retornará um JSON como o seguinte:
@@ -131,6 +202,7 @@ Se a requisição for bem-sucedida e a data fornecida for válida, o endpoint re
 ```
 
 - Retorno da Requisição
+- 
 ```
 Saldo diário consolidado com sucesso para a data: 2024-10-29
 ```
@@ -140,6 +212,7 @@ Saldo diário consolidado com sucesso para a data: 2024-10-29
 - http://localhost:5000/api/consolidados/consolidar?data=2024-10-29
 
 - Retorno da Requisição
+  
 ```
 Saldo diário consolidado com sucesso para a data: 2024-10-29
 ```
@@ -156,6 +229,7 @@ Saldo diário consolidado com sucesso para a data: 2024-10-29
 ```
 
 - Retorno da Requisição
+  
 ```
 {
     "data": "2024-10-30",
@@ -222,4 +296,5 @@ O **Fluxo Caixa Diário Microservice** é uma aplicação robusta e escalável, 
 
 ### Desenvolvido por:
 Emerson Amorim [@emerson-amorim-dev](https://www.linkedin.com/in/emerson-amorim-dev/)
+
 
