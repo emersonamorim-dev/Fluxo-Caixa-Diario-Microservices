@@ -22,7 +22,7 @@ namespace FluxoCaixaDiarioMicroservice.Application.UseCases
             {
                 _logger.LogInformation("Iniciando consolidação do saldo para a data: {Data}", data);
 
-                // Obter valores de crédito e débito separadamente
+                // Obtém valores de crédito e débito separadamente
                 var (totalCreditos, totalDebitos) = await CalcularCreditosDebitosDiario(data);
 
                 _logger.LogInformation("Saldo consolidado para a data {Data} foi calculado com sucesso.", data);
