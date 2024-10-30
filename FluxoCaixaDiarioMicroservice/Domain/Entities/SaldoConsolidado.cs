@@ -22,7 +22,7 @@ namespace FluxoCaixaDiarioMicroservice.Domain.Entities
             Saldo = saldo;
             TotalCreditos = totalCreditos;
             TotalDebitos = totalDebitos;
-            SaldoFinal = saldo + totalCreditos - totalDebitos; // Certifica que o saldo inicial é considerado
+            SaldoFinal = saldo + totalCreditos - totalDebitos; 
         }
 
         // Construtor para consolidação sem saldo inicial
