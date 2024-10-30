@@ -179,8 +179,7 @@ Codificação em C# com Entity Framework com uso DotNet Core 8.0 para projeto **
 
 ```
 
-- Retorno da Requisição
-- 
+- Retorno da Requisição 
 ```
 Saldo diário consolidado com sucesso para a data: 2024-10-29
 ```
