@@ -254,7 +254,7 @@ Saldo diário consolidado com sucesso para a data: 2024-10-29
 
 #### Diagrama da Aplicação
 
-![](https://raw.githubusercontent.com/emersonamorim-dev/fluxo-caixa-diario-microservice/refs/heads/main/Diagrama/Diagrama-Fluxo-Caixa-Diario-Microservice.png)
+![](https://raw.githubusercontent.com/emersonamorim-dev/Fluxo-Caixa-Diario-Microservices/refs/heads/main/Diagrama/Diagrama-Fluxo-Caixa-Diario-Microservice.png)
 
 
 #### Arquitetura da Aplicação
@@ -273,7 +273,7 @@ A arquitetura do Fluxo Caixa Diário Microservice foi planejada para ser modular
 
 #### Resultado de Testes com xUnit
 
-![](https://raw.githubusercontent.com/emersonamorim-dev/fluxo-caixa-diario-microservice/refs/heads/main/Diagrama/Teste-XUnit.png)
+![](https://raw.githubusercontent.com/emersonamorim-dev/Fluxo-Caixa-Diario-Microservices/refs/heads/main/Diagrama/Teste-XUnit.png)
 
 
 
