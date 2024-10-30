@@ -50,7 +50,7 @@ namespace FluxoCaixaDiarioMicroservice.Application.UseCases
                     return (0, 0);
                 }
 
-                // Separar créditos e débitos
+                // Separa créditos e débitos
                 var totalCreditos = lancamentos
                     .Where(l => l.Tipo.Equals("Crédito", StringComparison.OrdinalIgnoreCase))
                     .Sum(l => l.Valor);
