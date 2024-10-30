@@ -168,28 +168,6 @@ Codificação em C# com Entity Framework com uso DotNet Core 8.0 para projeto **
 
 
 
-http://localhost:5000/api/consolidados/consolidado
-```
-
-{
-  "data": "2024-10-29"
-}
-```
-
-
-Resposta
-Se a requisição for bem-sucedida e a data fornecida for válida, o endpoint retornará um JSON como o seguinte:
-
-```
-{
-  "data": "2024-10-29",
-  "total_creditos": 1500.00,
-  "total_debitos": 500.00,
-  "saldo_consolidado": 1000.00
-}
-```
-
-
 ##### Segue o endpoint para requisição Post no Postman
 
 - http://localhost:5000/api/consolidados/consolidar
