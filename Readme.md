@@ -43,6 +43,41 @@ Codificação em C# com Entity Framework com uso DotNet Core 8.0 para projeto **
    cd Fluxo-Caixa-Diario-Microservice
    ```
 
+   #### Comandos necessário para instalar o .NET Core 8.0 no Ubuntu 24.04 via WSL2
+
+```
+sudo apt update && sudo apt upgrade -y
+```
+
+```
+sudo apt install -y wget apt-transport-https
+```
+
+
+- Adicionar o Repositório do Microsoft Package
+```
+# Baixar a chave GPG
+wget https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+
+# Instalar o pacote de repositório da Microsoft
+sudo dpkg -i packages-microsoft-prod.deb
+```
+
+- Instalar o SDK do .NET Core 8.0
+
+```
+sudo apt update
+```
+
+```
+sudo apt install -y dotnet-sdk-8.0
+```
+
+```
+dotnet --version
+
+```
+
 2. **Rode aplicação com Docker Desktop**
 
    - Configurado para rodar dentro WSL2 com Ubuntu 24.04
