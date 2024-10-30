@@ -1,0 +1,6 @@
+@FluxoCaixaDiarioMicroservice_HostAddress = http://localhost:5271
+
+GET {{FluxoCaixaDiarioMicroservice_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

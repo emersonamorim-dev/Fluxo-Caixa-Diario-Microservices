@@ -1,0 +1,11 @@
+server.name: kibana
+server.host: "0.0.0.0"
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+elasticsearch.ssl.verificationMode: "none"
+monitoring.ui.container.elasticsearch.enabled: true
+server.rewriteBasePath: false
+server.publicBaseUrl: "http://localhost:5601"
+
+
+
+

@@ -1,0 +1,108 @@
+version: '3.9'
+
+services:
+  fluxo-caixa-diario-microservice:
+    container_name: fluxo-caixa-diario-microservice
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: final
+    image: fluxo-caixa-diario-microservice:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__RedisHost=redis-cache:6379
+      - ConnectionStrings__MongoDb=mongodb://mongo-db:27017/FluxoCaixaDb
+      - ElasticApm__ServerUrl=http://apm-server:8200
+      - ConnectionStrings__RabbitMQHost=rabbitmq
+      - ConnectionStrings__RabbitMQPort=5672
+      - ConnectionStrings__RabbitMQUser=guest
+      - ConnectionStrings__RabbitMQPassword=guest
+    dns:
+      - 8.8.8.8
+    ports:
+      - "5000:80"
+    networks:
+      - microservice-network
+    depends_on:
+      - mongo-db
+      - redis-cache
+      - rabbitmq
+      - elasticsearch
+      - logstash
+    command: ["dotnet", "FluxoCaixaDiarioMicroservice.dll"] 
+
+  mongo-db:
+    image: mongo:latest
+    container_name: mongo-db
+    environment:
+      MONGO_INITDB_DATABASE: FluxoCaixaDb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./databases/mongo/data:/data/db
+    networks:
+      - microservice-network
+
+  redis-cache:
+    image: redis:latest
+    container_name: redis-cache
+    ports:
+      - "6379:6379"
+    networks:
+      - microservice-network
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq # Adiciona volume persistente
+    networks:
+      - microservice-network
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.9.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.security.enabled=false
+    ports:
+      - "9200:9200"
+    networks:
+      - microservice-network
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.9.0
+    container_name: logstash
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5044:5044"
+    networks:
+      - microservice-network
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.9.0
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    volumes:
+      - ./config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    networks:
+      - microservice-network
+
+networks:
+  microservice-network:
+    driver: bridge

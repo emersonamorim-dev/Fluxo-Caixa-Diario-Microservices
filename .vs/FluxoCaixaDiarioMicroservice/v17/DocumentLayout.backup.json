@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\projetos\\projetos-csharp\\1881\\FluxoCaixaDiarioMicroservice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{24060396-6B4D-4B36-99A9-8AD9849BF7E6}|FluxoCaixaDiarioMicroservice\\FluxoCaixaDiarioMicroservice.csproj|e:\\projetos\\projetos-csharp\\1881\\fluxocaixadiariomicroservice\\fluxocaixadiariomicroservice\\presentation\\controllers\\consolidadodiariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24060396-6B4D-4B36-99A9-8AD9849BF7E6}|FluxoCaixaDiarioMicroservice\\FluxoCaixaDiarioMicroservice.csproj|solutionrelative:fluxocaixadiariomicroservice\\presentation\\controllers\\consolidadodiariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ConsolidadoDiarioController.cs",
+              "DocumentMoniker": "E:\\projetos\\projetos-csharp\\1881\\FluxoCaixaDiarioMicroservice\\FluxoCaixaDiarioMicroservice\\Presentation\\Controllers\\ConsolidadoDiarioController.cs",
+              "RelativeDocumentMoniker": "FluxoCaixaDiarioMicroservice\\Presentation\\Controllers\\ConsolidadoDiarioController.cs",
+              "ToolTip": "E:\\projetos\\projetos-csharp\\1881\\FluxoCaixaDiarioMicroservice\\FluxoCaixaDiarioMicroservice\\Presentation\\Controllers\\ConsolidadoDiarioController.cs",
+              "RelativeToolTip": "FluxoCaixaDiarioMicroservice\\Presentation\\Controllers\\ConsolidadoDiarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T10:49:38.62Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
