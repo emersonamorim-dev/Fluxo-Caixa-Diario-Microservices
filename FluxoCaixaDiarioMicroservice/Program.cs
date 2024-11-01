@@ -72,7 +72,7 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
     return ConnectionMultiplexer.Connect(configuration);
 });
 
-// Configurando RabbitMQ com tratamento de erros
+// Configura RabbitMQ com tratamento de erros
 builder.Services.AddSingleton<IConnection>(sp =>
 {
     try
