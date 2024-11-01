@@ -38,7 +38,7 @@ namespace FluxoCaixaDiarioMicroservice.Domain.Repositories
             return await _lancamentosCollection.Find(filter).ToListAsync();
         }
 
-        // obter todos os lançamentos
+        // obtém todos os lançamentos
         public async Task<IEnumerable<Lancamento>> ObterTodosLancamentosAsync()
         {
             return await _lancamentosCollection.Find(_ => true).ToListAsync();
