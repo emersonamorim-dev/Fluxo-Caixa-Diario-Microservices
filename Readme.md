@@ -1,7 +1,7 @@
 ### Fluxo Caixa Diário Microservice - C# com Entity Framework, MongoDB, RabbitMQ, ELK Stack 🚀 🔄 🌐 
 
 
-Codificação em C# com Entity Framework com uso DotNet Core 8.0 para projeto **Fluxo Caixa Diário Microservice** para um **Teste Técnico Carrefour** essa aplicação é uma solução moderna e robusta para o gerenciamento de Fluxos de Caixa Diários, projetada para ser escalável e altamente disponível. Esta aplicação foi desenvolvida utilizando uma arquitetura baseada em microserviços, que facilita a manutenção e a evolução da solução ao longo do tempo. Utilizamos diversas tecnologias para garantir a eficiência, confiabilidade e auditabilidade do sistema, tais como **Entity Framework**, **MongoDB**, **RabbitMQ**, **ELK Stack (Elasticsearch, Logstash, Kibana)**, **Redis**, e **Xunit** para implementação de testes.
+Codificação em C# com Entity Framework com uso DotNet Core 8.0 para projeto **Fluxo Caixa Diário Microservice** para um **Teste Técnico Carrefour** essa aplicação é uma solução moderna e robusta para o gerenciamento de Fluxos de Caixa Diários, projetada para ser escalável e altamente disponível. Esta aplicação foi desenvolvida utilizando uma arquitetura baseada em microserviços, que facilita a manutenção e a evolução da solução ao longo do tempo. Utilizei diversas tecnologias para garantir a eficiência, confiabilidade e auditabilidade do sistema, tais como **Entity Framework**, **MongoDB**, **RabbitMQ**, **ELK Stack (Elasticsearch, Logstash, Kibana)**, **Redis**, e **Xunit** para implementação de testes.
 
 
 #### Tecnologias Utilizadas
