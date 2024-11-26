@@ -6,6 +6,7 @@ using FluxoCaixaDiarioMicroservice.Domain.Repositories;
 using FluxoCaixaDiarioMicroservice.Infrastructure.Config;
 using FluxoCaixaDiarioMicroservice.Infrastructure.Logging;
 using FluxoCaixaDiarioMicroservice.Infrastructure.Redis;
+using FluxoCaixaDiarioMicroservice.Presentation.Middleware;
 using MongoDB.Driver;
 using RabbitMQ.Client;
 using Serilog;
@@ -14,6 +15,7 @@ using System.Reflection;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -113,6 +115,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
@@ -121,3 +125,4 @@ app.MapControllers();
 app.Urls.Add("http://*:80");
 
 app.Run();
+
