@@ -302,6 +302,36 @@ Durante o desenvolvimento do **FluxoCaixaDiarioMicroservice**, seguimos os princ
 Além disso, aplicamos padrões de projeto como **Repository** para abstrair a lógica de acesso a dados, **Factory** para criação de objetos de maneira centralizada, e **Observer** para garantir que eventos sejam notificados e tratados por todas as partes interessadas.
 
 
+#### Estrutura de Exceções Personalizadas:
+- Implementado a classe LancamentoNotFoundException para tratar casos específicos de lançamentos não encontrados
+- Esta exceção é lançada quando um lançamento específico não é encontrado no sistema
+- 
+#### Modelo de Resposta de Erro (ErrorResponse):
+- Implementado uma classe padronizada para respostas de erro
+- Inclui informações como tipo do erro, mensagem, stack trace, código de status e timestamp
+- Permite uma resposta consistente e profissional para todos os erros
+
+#### Middleware Global de Tratamento de Exceções:
+- Criei o GlobalExceptionHandlerMiddleware que captura todas as exceções não tratadas
+- Converte exceções em respostas HTTP apropriadas
+- Centraliza o tratamento de erros em um único lugar
+- Fornece logs detalhados para todas as exceções
+
+#### Melhorias no Controller:
+- Adicionei atributos de documentação ([Produces], [ProducesResponseType])
+- Implementei tratamento de erros mais robusto
+- Removi os blocos try-catch redundantes
+- Adicionei documentação XML para os endpoints
+- Melhorei as mensagens de log
+
+#### Benefícios da Nova Implementação:
+- Tratamento de erros consistente em toda a aplicação
+- Respostas de erro padronizadas e profissionais
+- Melhor rastreamento de erros com logs detalhados
+- Código mais limpo e manutenível
+- Documentação clara dos endpoints e possíveis respostas
+
+
 
 ### Conclusão
 O **Fluxo Caixa Diário Microservice** é uma aplicação robusta e escalável, desenvolvida com tecnologias modernas e utilizando boas práticas de engenharia de software. A arquitetura baseada em microserviços, combinada com o uso de mensageria e armazenamento distribuído, permite a alta disponibilidade e manutenção da solução. Graças aos princípios de **SOLID** e **design patterns**, garantimos uma base de código limpa e pronta para expansões futuras. Isso possibilita uma evolução contínua do sistema, atendendo às necessidades do negócio de forma ágil e segura.
